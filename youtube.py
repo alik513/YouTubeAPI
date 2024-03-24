@@ -116,8 +116,6 @@ video_data['comment_count'] = pd.to_numeric(video_data['comment_count'])
 
 # https://stackoverflow.com/questions/16742381/how-to-convert-youtube-api-duration-to-seconds
 # https://www.youtube.com/watch?v=D56_Cx36oGY
-import isodate
-
 # Convert YouTube duration string to seconds
 video_data['duration_secs'] = video_data['duration'].apply(lambda x: isodate.parse_duration(x).total_seconds())
 
