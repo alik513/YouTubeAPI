@@ -1,7 +1,5 @@
 from googleapiclient.discovery import build
 import pandas as pd
-import seaborn as sns
-import matplotlib.pyplot as plt
 from IPython.display import JSON
 from dotenv import dotenv_values
 import psycopg2
