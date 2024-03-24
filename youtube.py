@@ -129,7 +129,7 @@ engine = create_engine('postgresql://' + user + ':' + password + '@' + host + ':
 
 channel_data.to_sql('ay_channel_data', engine, schema='student', if_exists='replace', index=False)
 
-video_df.to_sql('ay_video_df', engine, schema='student', if_exists='replace', index=False)
+video_data.to_sql('ay_video_data', engine, schema='student', if_exists='replace', index=False)
 
 
 conn.close()
