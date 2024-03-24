@@ -1,6 +1,5 @@
 from googleapiclient.discovery import build
 import pandas as pd
-from IPython.display import JSON
 from dotenv import dotenv_values
 import psycopg2
 from sqlalchemy import create_engine
