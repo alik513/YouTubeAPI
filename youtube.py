@@ -126,15 +126,11 @@ conn = psycopg2.connect(
     port = secrets["port"]
 )
 
-print("Connection to the database successful!")
-
 engine = create_engine('postgresql://' + user + ':' + password + '@' + host + ':' + port + '/' + dbname)
 
 channel_data.to_sql('ay_channel_data', engine, schema='student', if_exists='replace', index=False)
-print("Channel_data DataFrame successfully updated!")
 
 video_df.to_sql('ay_video_df', engine, schema='student', if_exists='replace', index=False)
-print("Video_data DataFrame successfully updated!")
 
 
 conn.close()
