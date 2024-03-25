@@ -1,12 +1,19 @@
 from googleapiclient.discovery import build
 import pandas as pd
-from dotenv import dotenv_values
-import psycopg2
+from dotenv import load_dotenv
 from sqlalchemy import create_engine
 import isodate
+import os
 
-secrets = dotenv_values("userdata.env")
-api_key = secrets["api_key"]
+load_dotenv("userdata.env")
+api_key = os.getenv("api_key")
+dbname = os.getenv("dbname")
+user = os.getenv("user")
+password = os.getenv("password")
+host = os.getenv("host")
+port = os.getenv("port")
+
+
 
 channel_ids = ['UCXuqSBlHAE6Xw-yeJA0Tunw', # linus tech tips
                'UCMiJRAwDNSNzuYeN2uWa0pA', # mrwhostheboss
@@ -116,14 +123,7 @@ video_data['comment_count'] = pd.to_numeric(video_data['comment_count'])
 # Convert YouTube duration string to seconds
 video_data['duration_secs'] = video_data['duration'].apply(lambda x: isodate.parse_duration(x).total_seconds())
 
-
-conn = psycopg2.connect(
-    dbname = secrets["dbname"],
-    user = secrets["user"],
-    password = secrets["password"],
-    host = secrets["host"],
-    port = secrets["port"]
-)
+# Connect to database
 
 engine = create_engine('postgresql://' + user + ':' + password + '@' + host + ':' + port + '/' + dbname)
 
@@ -132,4 +132,3 @@ channel_data.to_sql('ay_channel_data', engine, schema='student', if_exists='repl
 video_data.to_sql('ay_video_data', engine, schema='student', if_exists='replace', index=False)
 
 
-conn.close()
