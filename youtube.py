@@ -14,7 +14,6 @@ host = os.getenv("host")
 port = os.getenv("port")
 
 
-
 channel_ids = ['UCXuqSBlHAE6Xw-yeJA0Tunw', # linus tech tips
                'UCMiJRAwDNSNzuYeN2uWa0pA', # mrwhostheboss
                'UCBJycsmduvYEL83R_U4JriQ', # marques brownlee
