@@ -18,7 +18,11 @@ channel_ids = ['UCXuqSBlHAE6Xw-yeJA0Tunw', # linus tech tips
                'UCMiJRAwDNSNzuYeN2uWa0pA', # mrwhostheboss
                'UCBJycsmduvYEL83R_U4JriQ', # marques brownlee
                'UCey_c7U86mJGz1VJWH5CYPA', # ijustine
-               'UCXGgrKt94gR6lmN4aN3mYTg' # austin evans
+               'UCXGgrKt94gR6lmN4aN3mYTg', # austin evans
+               'UC9fSZHEh6XsRpX-xJc6lT3A', # uravgconsumer
+               'UCsTcErHg8oDvUnTzoqsYeNw', # unboxtherapay
+               'UCVYamHliCI9rw1tHR1xbkfw', # dave2d
+               'UCtinbF-Q-fVthA0qrFQTgXQ', # casey
                 ]
 # Insert YouTube api version and api_key, code from YouTube documentation
 youtube = build(
