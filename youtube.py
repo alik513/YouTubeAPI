@@ -38,11 +38,13 @@ def get_channel_stats(youtube, channel_ids):
         id = ','.join(channel_ids))
     response = request.execute()
     for i in range(len(response['items'])):
-        data = {'channel_name': response['items'][i]['snippet']['title'],
+        data = {'thumbnail' : response['items'][i]['snippet']['thumbnails']['default']['url'],
+                'channel_name': response['items'][i]['snippet']['title'],
                 'subscribers' : response['items'][i]['statistics']['subscriberCount'],
                 'views' : response['items'][i]['statistics']['viewCount'],
                 'total_videos' : response['items'][i]['statistics']['videoCount'],
-                'playlist_id' : response['items'][i]['contentDetails']['relatedPlaylists']['uploads']}
+                'playlist_id' : response['items'][i]['contentDetails']['relatedPlaylists']['uploads']
+                }
 
         all_data.append(data)
     return all_data
